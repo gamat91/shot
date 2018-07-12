@@ -1,0 +1,28 @@
+{
+  "bares": [
+    {
+      "nome": "Chemistry Bar",
+      "imagem": "@drawable/sao_paulo_sp"
+    },
+    {
+      "nome": "Blood Rock Bar",
+      "imagem": "@drawable/sao_paulo_sp"
+    },
+    {
+      "nome": "Verdant",
+      "imagem": "@drawable/sao_paulo_sp"
+    },
+    {
+      "nome": "VU Bar",
+      "imagem": "@drawable/sao_paulo_sp"
+    },
+    {
+      "nome": "Vitto Bar",
+      "imagem": "@drawable/sao_paulo_sp"
+    },
+    {
+      "nome": "Bar do Didi",
+      "imagem": "@drawable/sao_paulo_sp"
+    }
+  ]
+}
