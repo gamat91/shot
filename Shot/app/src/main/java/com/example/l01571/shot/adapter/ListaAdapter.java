@@ -29,7 +29,6 @@ public class ListaAdapter extends BaseAdapter {
 
     }
 
-
     @Override
     public int getCount() {
         return lista.size();

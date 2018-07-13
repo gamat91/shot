@@ -28,7 +28,7 @@
                 android:id="@+id/item_lista_separador"
                 android:layout_width="0dp"
                 android:layout_height="3dp"
-                android:background="@android:color/holo_red_dark"
+                android:background="@android:color/holo_purple"
                 app:layout_constraintEnd_toEndOf="@+id/item_lista_imagem"
                 app:layout_constraintStart_toStartOf="@+id/item_lista_imagem"
                 app:layout_constraintTop_toBottomOf="@+id/item_lista_imagem" />

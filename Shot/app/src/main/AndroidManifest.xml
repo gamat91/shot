@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".acitivities.EstabelecimentoActivity"
+            android:label="@string/title_activity_estabelecimento"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
