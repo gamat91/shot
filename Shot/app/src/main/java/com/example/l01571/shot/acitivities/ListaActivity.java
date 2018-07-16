@@ -61,6 +61,8 @@ public class ListaActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.menu_gps:
                 Toast.makeText(this, "Deu certo", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(ListaActivity.this, GPSActivity.class);
+                startActivity(intent);
                 break;
 
         }
