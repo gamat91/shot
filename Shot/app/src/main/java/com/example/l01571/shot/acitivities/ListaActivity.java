@@ -3,9 +3,13 @@ package com.example.l01571.shot.acitivities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.l01571.shot.DAO.EstabelecimentoDAO;
 import com.example.l01571.shot.R;
@@ -42,5 +46,26 @@ public class ListaActivity extends AppCompatActivity {
         });
 
 
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_lista, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu_gps:
+                Toast.makeText(this, "Deu certo", Toast.LENGTH_LONG).show();
+                break;
+
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 }
