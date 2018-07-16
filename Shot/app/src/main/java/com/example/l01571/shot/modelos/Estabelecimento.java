@@ -1,21 +1,35 @@
 package com.example.l01571.shot.modelos;
 
 
-public class Estabelecimento {
+import java.io.Serializable;
 
-    private final String nome, imagem;
+public class Estabelecimento implements Serializable {
 
+    private String nome, imagem, endereco;
 
-    public Estabelecimento(String nome, String imagem){
-        this.nome = nome;
-        this.imagem = imagem;
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getNome() {
         return nome;
     }
 
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
     public String getImagem() {
         return imagem;
     }
+
+    public void setImagem(String imagem){
+        this.imagem = imagem;
+    }
+
+
 }
