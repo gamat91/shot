@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import com.example.l01571.shot.DAO.EstabelecimentoDAO;
+import com.example.l01571.shot.helper.Localizador;
 import com.example.l01571.shot.modelos.Estabelecimento;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -48,6 +49,7 @@ public class FragmentGPS extends SupportMapFragment implements OnMapReadyCallbac
 
         }
 
+        Localizador local = new Localizador(getContext(), googleMap);
 
 
     }

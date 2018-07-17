@@ -1,6 +1,9 @@
 package com.example.l01571.shot.activities;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -43,8 +46,15 @@ public class ListaActivity extends AppCompatActivity {
             }
         });
 
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 2);
+            requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 3);
+            };
+        }
 
-    }
+
+
 
 
     @Override
