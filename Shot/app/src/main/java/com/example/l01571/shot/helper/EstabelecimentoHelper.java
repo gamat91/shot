@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.l01571.shot.R;
-import com.example.l01571.shot.acitivities.EstabelecimentoActivity;
+import com.example.l01571.shot.activities.EstabelecimentoActivity;
 import com.example.l01571.shot.modelos.Estabelecimento;
 
 public class EstabelecimentoHelper {

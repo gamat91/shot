@@ -6,14 +6,18 @@ import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
+import com.example.l01571.shot.DAO.EstabelecimentoDAO;
+import com.example.l01571.shot.modelos.Estabelecimento;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -31,6 +35,19 @@ public class FragmentGPS extends SupportMapFragment implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         CameraUpdate camera = CameraUpdateFactory.newLatLngZoom(buscaCoordenada("Avenida silva jardim 1538"), 17);
         googleMap.moveCamera(camera);
+
+        EstabelecimentoDAO dao = new EstabelecimentoDAO();
+        for(Estabelecimento estabelecimento:dao.lista()){
+            LatLng coordenada = buscaCoordenada(estabelecimento.getEndereco());
+            if(coordenada!=null){
+                MarkerOptions marker = new MarkerOptions();
+                marker.position(coordenada);
+                marker.title(estabelecimento.getNome());
+                googleMap.addMarker(marker);
+            }
+
+        }
+
 
 
     }

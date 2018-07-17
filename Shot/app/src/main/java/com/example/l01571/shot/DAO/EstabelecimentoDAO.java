@@ -16,30 +16,30 @@ public class EstabelecimentoDAO {
         Estabelecimento estabelecimento = new Estabelecimento();
         estabelecimento.setNome("Chemistry Bar");
         estabelecimento.setImagem("chemistry");
-        estabelecimento.setEndereco("rua do camacua 397");
+        estabelecimento.setEndereco("Av. Vicente Machado, 1059 - 01 - Centro, Curitiba - PR, 80420-011");
         lista.add(estabelecimento);
 
         Estabelecimento estabelecimento2 = new Estabelecimento();
         estabelecimento2.setNome("Blood Rock Bar");
-        estabelecimento2.setEndereco("av silva jardim 1538");
+        estabelecimento2.setEndereco("Rua Presidente Carlos Cavalcanti, 1212 - São Francisco, Curitiba - PR, 80510-040");
         estabelecimento2.setImagem("blood");
         lista.add(estabelecimento2);
 
         Estabelecimento estabelecimento3 = new Estabelecimento();
         estabelecimento3.setNome("Verdant");
-        estabelecimento3.setEndereco("av silva jardim 1538");
+        estabelecimento3.setEndereco("R. Dr. Claudino dos Santos, 126 - São Francisco, Curitiba - PR, 80020-170");
         estabelecimento3.setImagem("verdant");
         lista.add(estabelecimento3);
 
         Estabelecimento estabelecimento4 = new Estabelecimento();
         estabelecimento4.setNome("Vitto Bar");
-        estabelecimento4.setEndereco("av silva jardim 1538");
+        estabelecimento4.setEndereco("R. Trajano Reis, 326 - São Francisco, Curitiba - PR, 80510-220");
         estabelecimento4.setImagem("vitto");
         lista.add(estabelecimento4);
 
         Estabelecimento estabelecimento5 = new Estabelecimento();
         estabelecimento5.setNome("92 Graus");
-        estabelecimento5.setEndereco("av silva jardim 1538");
+        estabelecimento5.setEndereco("Av. Manoel Ribas, 108 - São Francisco, Curitiba - PR, 80510-020");
         estabelecimento5.setImagem("graus");
         lista.add(estabelecimento5);
 

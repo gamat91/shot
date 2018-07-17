@@ -1,4 +1,4 @@
-package com.example.l01571.shot.acitivities;
+package com.example.l01571.shot.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -15,8 +15,6 @@ import com.example.l01571.shot.DAO.EstabelecimentoDAO;
 import com.example.l01571.shot.R;
 import com.example.l01571.shot.adapter.ListaAdapter;
 import com.example.l01571.shot.modelos.Estabelecimento;
-
-import java.io.Serializable;
 
 public class ListaActivity extends AppCompatActivity {
 
@@ -61,7 +59,7 @@ public class ListaActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.menu_gps:
                 Toast.makeText(this, "Deu certo", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(ListaActivity.this, MapsActivity.class);
+                Intent intent = new Intent(ListaActivity.this, GPSActivity.class);
                 startActivity(intent);
                 break;
 
