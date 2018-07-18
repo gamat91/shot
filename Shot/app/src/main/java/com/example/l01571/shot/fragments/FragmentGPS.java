@@ -34,8 +34,8 @@ public class FragmentGPS extends SupportMapFragment implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        CameraUpdate camera = CameraUpdateFactory.newLatLngZoom(buscaCoordenada("Avenida silva jardim 1538"), 17);
-        googleMap.moveCamera(camera);
+
+        Localizador local = new Localizador(getContext(), googleMap);
 
         EstabelecimentoDAO dao = new EstabelecimentoDAO();
         for(Estabelecimento estabelecimento:dao.lista()){
@@ -49,7 +49,7 @@ public class FragmentGPS extends SupportMapFragment implements OnMapReadyCallbac
 
         }
 
-        Localizador local = new Localizador(getContext(), googleMap);
+
 
 
     }

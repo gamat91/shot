@@ -13,6 +13,8 @@ import android.support.v4.app.ActivityCompat;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -39,7 +41,9 @@ public class Localizador implements GoogleApiClient.ConnectionCallbacks, Locatio
 
     @Override
     public void onLocationChanged(Location location) {
+
         LatLng posicao = new LatLng(location.getLatitude(), location.getLongitude());
+        CameraUpdate camera = CameraUpdateFactory.newLatLngZoom(posicao, 17);
         MarkerOptions marker = new MarkerOptions();
         marker.position(posicao);
         marker.title("Sua localização");
@@ -48,8 +52,8 @@ public class Localizador implements GoogleApiClient.ConnectionCallbacks, Locatio
         }else {
             m.setPosition(posicao);
         }
+        mapa.moveCamera(camera);
     }
-
 
 
     @Override
