@@ -1,12 +1,19 @@
 package com.example.l01571.shot.helper;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 //import android.location.LocationListener;
 import com.google.android.gms.location.LocationListener;
+
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 
@@ -58,6 +65,14 @@ public class Localizador implements GoogleApiClient.ConnectionCallbacks, Locatio
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
+
+        final LocationManager manager = (LocationManager) context.getSystemService(context.LOCATION_SERVICE);
+        if(!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            mensagemAlertaGps();
+        }
+
+
+
         LocationRequest location = new LocationRequest();
         location.setSmallestDisplacement(50);
         location.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
@@ -83,6 +98,22 @@ public class Localizador implements GoogleApiClient.ConnectionCallbacks, Locatio
             }
         });
 */
+    }
+
+    private void mensagemAlertaGps() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Você gostaria de habilitar o GPS?").setCancelable(false).setPositiveButton("Sim", new DialogInterface.OnClickListener(){
+            public void onClick (final DialogInterface dialog, final int id){
+                context.startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+            }
+        }).setNegativeButton("Não", new DialogInterface.OnClickListener(){
+            public void onClick(final DialogInterface dialog, final int id){
+                dialog.cancel();
+            }
+        });
+        final AlertDialog alerta = builder.create();
+        alerta.show();
+
     }
 
     @Override
